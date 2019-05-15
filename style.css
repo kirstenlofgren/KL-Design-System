@@ -88,30 +88,20 @@ Typography
 	/* ==========================================================================
 	Headings
 	========================================================================== */
-		h1,h2,h3,h4,h5,h6 {
+		h1, h2, h3, h4, h5, h6 {
+			color: var(--color-tertiary-3);
 			font-family: var(--font-secondary);
-			margin: 1rem 0 .75rem;
 		}
 		h1 {
 			font-size: var(--size-2xlarge);
-			line-height: 1.25;
-			margin: 0;
-			padding: 0 0 1rem;
 		}
 		h2 {
 			font-size: var(--size-xlarge);
-			line-height: 1.25;
 		}
 		h3 {
 			font-size: var(--size-large);
 		}
-		h4 {
-			font-size: var(--size-medium);
-		}
-		h5 {
-			font-size: var(--size-medium);
-		}
-		h6 {
+		h4, h5, h6 {
 			font-size: var(--size-medium);
 		}
 	/* ==========================================================================
@@ -146,7 +136,7 @@ Typography
 		}
 		h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus {
 			color: var(--color-secondary-4);
-		}
+		}  
 	/* ==========================================================================
 	Specialty Text
 	========================================================================== */
@@ -371,6 +361,29 @@ Layouts
 			grid-template-columns: repeat(12, 1fr);
 			grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr minmax(65vh 85vh);
 		}
+		.resume-section {
+			animation: slideleft 1s ease-out;
+		}
+		@keyframes slideleft {
+			0% {
+				transform: translate(10rem, -8rem);
+			}
+			100% {
+				transform: translate(0rem, 0rem);
+			}
+		}
+		.portfolio-section {
+			animation: slideright 1s ease-out;
+			animation-delay: 1s; 
+		}
+		@keyframes slideright {
+			0% {
+				transform: translate(-8rem, -16rem);
+			}
+			100% {
+				transform: translate(0rem, 0rem);
+			}
+		}
 		/*
 		Hero Section
 		*/
@@ -492,7 +505,6 @@ Layouts
 			.resume-promo-text .button-link {
 				grid-row: 3 / span 1;
 			}
-
 			@media (min-width: 800px) {
 				.resume-box {
 					transform: skew(-30deg, 70deg) translate(0rem, 10rem);
@@ -638,7 +650,6 @@ Layouts
 				var(--color-secondary-1) 90%,var(--color-secondary-1) 100%);
 			margin: 0 0 2rem;
 			padding: 2rem;
-
 		} 
 		.resume-card-text { 
 			margin-left: .5rem;
@@ -742,7 +753,6 @@ Layouts
 				grid-column: 1 / span 12; 
 				grid-row: 12 / span 1;
 			}
-
 			@media (min-width: 800px) {
 				.portfolio-page {
 					grid-template-rows: repeat(6, 1fr); 
@@ -1117,7 +1127,7 @@ Layouts
 			.portfolio-item-content img:nth-of-type(3) {
 				grid-column: 4 / span 6;
 			}
-			.portfolio-item-content .pull-quote {
+			.portfolio-item-content blockquote {
 				grid-column: 4 / span 6;
 			}
 		}
@@ -1187,7 +1197,7 @@ Layouts
 			text-transform: uppercase;
 		}
 		form button:hover, input[type="submit"]:hover {
-				background-color: var(--color-tertiary-1);
+			background-color: var(--color-tertiary-1);
 			color: var(--color-primary-3);
 		}
 		form button:focus, input[type="submit"]:focus {
