@@ -10,15 +10,13 @@ Colors
 		--color-primary-2: #D8BEB8;
 		--color-primary-3: #7F5B52;
 
-		--color-primary-1-light: rgba(247, 235, 232, 0.5);
-
 		/*Greens*/
 		--color-secondary-1: rgba(103,158,136, 0);
 		--color-secondary-2: rgba(103,158,136, 0.5);
 		--color-secondary-3: #85B19F;
 		--color-secondary-4: #3F7F66;
 		
-		/*Greys*/
+		/*Grays*/
 		--color-tertiary-1: #F7F8F8;
 		--color-tertiary-2: #929493;
 		--color-tertiary-3: #031E13;
@@ -62,6 +60,12 @@ Typography
 			--ratio: 1.42;
 		}	
 	}
+	.primary-font {
+		font-family: var(--font-primary);
+	}
+	.secondary-font {
+		font-family: var(--font-seconday);
+	}
 	/* ==========================================================================
 	Links
 	========================================================================== */
@@ -92,6 +96,7 @@ Typography
 			font-size: var(--size-2xlarge);
 			line-height: 1.25;
 			margin: 0;
+			padding: 0 0 1rem;
 		}
 		h2 {
 			font-size: var(--size-xlarge);
@@ -127,49 +132,49 @@ Typography
 		h1 a:active {
 			color: var(--color-secondary-3);
 		}
-		h2 a, h3 a {
+		h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link {
 			color: var(--color-secondary-3);
 		}
-		h2 a, h3 a:visited {
+		h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
 			color: var(--color-secondary-3);
 		}
-		h2 a, h3 a:hover {
+		h2 a:hover , h3 a:hover , h4 a:hover , h5 a:hover , h6 a:hover {
 			color: var(--color-secondary-4);
 		}
-		h2 a, h3 a:active {
+		h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
 			color: var(--color-tertiary-2);
 		}
-		h2 a, h3 a:focus {
+		h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus {
 			color: var(--color-secondary-4);
 		}
 	/* ==========================================================================
 	Specialty Text
 	========================================================================== */
-	.featured-text {
-		font-size: var(--size-large);
-	}
-	.tertiary-copy {
-		font-family: var(--font-secondary);
-		font-size: var(--size-small);
-	}
-	blockquote {
-		border: solid var(--color-secondary-3) 3px;
-		border-bottom: none;
-		color: var(--color-secondary-3);
-		font-size: var(--size-medium);
-		margin-bottom: 0;
-		padding: 1rem 1rem 0 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	cite {
-		border-top: solid var(--color-secondary-3) 3px;
-		color: var(--color-secondary-3);
-		font-size: var(--size-medium);
-		margin-top: .25rem;
-		padding: .25rem 2rem;
-	}
+		.featured-text {
+			font-size: var(--size-large);
+		}
+		.tertiary-copy {
+			font-family: var(--font-secondary);
+			font-size: var(--size-small);
+		}
+		blockquote {
+			border: solid var(--color-secondary-3) 3px;
+			border-bottom: none;
+			color: var(--color-secondary-3);
+			font-size: var(--size-medium);
+			margin-bottom: 0;
+			padding: 1rem 1rem 0 2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		cite {
+			border-top: solid var(--color-secondary-3) 3px;
+			color: var(--color-secondary-3);
+			font-size: var(--size-medium);
+			margin-top: .25rem;
+			padding: .25rem 2rem;
+		}
 /* ==========================================================================
 Nav
 ========================================================================== */
@@ -212,7 +217,7 @@ Nav
 			margin: 1rem 1rem .5rem;
 			padding: .5rem 1rem;
 		}
-		@media (min-width: 750px) {
+		@media (min-width: 950px) {
 			nav li {
 				display: inline;
 				margin: 1rem .5rem 0 0; 
@@ -314,10 +319,11 @@ Components
 	/*
 	Button Links
 	*/
-		a.button-link , a.button-link :visited {
+		a.button-link:link , a.button-link:visited {
 			background-color: var(--color-primary-1);
 			border-radius: 5px;
-			color: var(--color-secondary-3);
+			box-shadow: 2px 2px 2px var(--color-primary-3);
+			color: var(--color-primary-3);
 			display: inline-block;
 			font: var(--size-small) var(--font-secondary);
 			margin: 2rem 0;
@@ -325,26 +331,27 @@ Components
 			text-align: center;
 			text-transform: uppercase;
 		}
-		a.button-link :hover {
-			background-color: var(--color-primary-2);
-			color: var(--color-secondary-3);
+		a.button-link:hover {
+			background-color: var(--color-tertiary-1);
+			color: var(--color-primary-3);
 		}
-		a.button-link :active {
-			background: linear-gradient(to left, var(--color-primary-1), var(--color-primary-2) 60%);
-			transition: all .4s ease-out;
-		}
-		a.button-link :focus {
+		a.button-link:active {
 			background-color: var(--color-primary-1);
-			color: var(--color-secondary-3);
-			transition: background-color .4s ease-in;
+			box-shadow: 0px 0px 0px var(--color-primary-3);
+			transition: all .4s ease-out;
+			transform: translate(2px, 2px);
+		}
+		a.button-link:focus {
+			background-color: var(--color-tertiary-1);
+			color: var(--color-primary-3);
 		}
 		@media (min-width: 620px) {
-			a.button-link  {
+			a.button-link:link  {
 				font-size: var(--size-medium);
 			}
 		}
 		@media (min-width: 1200px) {
-			a.button-link  {
+			a.button-link:link  {
 				font-size: var(--size-large);
 			}
 		}
@@ -583,6 +590,9 @@ Layouts
 		.about-text {
 			max-width: 80%;
 		}
+		.cta-heading {
+			font-size: var(--size-large);
+		}
 		@media (min-width: 700px) {
 			.about-content {
 				align-items: flex-start;
@@ -591,6 +601,9 @@ Layouts
 			}
 			.about-page {
 				padding: 2rem;
+			}
+			.cta-heading {
+				font-size: var(--size-xlarge);
 			}
 		}
 		@media (min-width: 1000px) {
@@ -601,7 +614,11 @@ Layouts
 			.about-page {
 				padding: 3rem 3rem 3.5rem;
 			}
+			.cta-heading {
+				font-size: var(--size-2xlarge);
+			}
 		}
+
 	/*
 	Resume Page
 	*/
@@ -669,7 +686,7 @@ Layouts
 	*/
 		/* Page of grid cards */
 			.portfolio-page {
-				background-color: var(--color-tertiary-1);
+				background-color: var(--color-primary-1);
 				display: grid;
 				grid-gap: 2rem;
 				grid-template-columns: repeat(12, 1fr); 
@@ -1109,6 +1126,32 @@ Layouts
 				padding: 3rem 3rem 3.5rem;
 			}
 		}
+	/*
+	Standard Page
+	*/
+		.standard-page {
+			background-image: url(images/black-line-pattern.jpg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding: 1rem;
+		}
+		.standard-page-content {
+			background-color: white;
+			margin: auto;
+			max-width: 80vw;
+			padding: 2rem;
+		}
+		@media (min-width: 800px) {
+			.standard-page {
+				padding: 2rem;
+			}
+		@media (min-width: 1000px) {
+
+			.standard-page {
+				padding: 3rem 3rem 3.5rem;
+			}
+		}
 	/* ==========================================================================
 	Form Component
 	========================================================================== */
@@ -1121,7 +1164,6 @@ Layouts
 		}
 		label {
 			margin: .4rem 0;
-			
 		}
 		input, textarea {
 			border: none;
@@ -1135,28 +1177,40 @@ Layouts
 		button, input[type="submit"] {
 			background-color: var(--color-primary-1);
 			border-radius: 5px;
-			color: var(--color-secondary-3);
-			font: var(--size-medium) var(--font-secondary);
-			margin: .5rem auto;
-			max-width: 50%;
-			padding: 1.2rem 1rem;
+			box-shadow: 2px 2px 2px var(--color-primary-3);
+			color: var(--color-primary-3);
+			display: inline-block;
+			font: var(--size-small) var(--font-secondary);
+			margin: 2rem 0;
+			padding: 1rem .8rem;
+			text-align: center;
 			text-transform: uppercase;
 		}
 		form button:hover, input[type="submit"]:hover {
-			background-color: var(--color-primary-2);
-			color: var(--color-secondary-3);
+				background-color: var(--color-tertiary-1);
+			color: var(--color-primary-3);
 		}
 		form button:focus, input[type="submit"]:focus {
-			background-color: var(--color-primary-2);
-			color: var(--color-secondary-3);
-			outline: none;
+			background-color: var(--color-tertiary-1);
+			color: var(--color-primary-3);
 		}
 		form button:active, input[type="submit"]:active {
 			background-color: var(--color-primary-1);
-			box-shadow: 0 .5px 1.5px var(--color-secondary-3);
-			color: var(--color-secondary-3);
-			transition: all .5s;
+			box-shadow: 0px 0px 0px var(--color-primary-3);
+			transition: all .4s ease-out;
+			transform: translate(2px, 2px);
 		}
+		@media (min-width: 620px) {
+			button, input[type="submit"]  {
+				font-size: var(--size-small);
+			}
+		}
+		@media (min-width: 1200px) {
+			button, input[type="submit"] {
+				font-size: var(--size-medium);
+			}
+		}
+
 /* ==========================================================================
 Examples
 ========================================================================== */
@@ -1165,7 +1219,9 @@ Examples
 		max-width: 60rem;
 		padding: 3rem;
 	}
-
+	figure img {
+		max-width: 100%;
+	}
 	.portfolio-card-example {
 		grid-column: 1 / span 12; 
 		grid-row: 1 / span 1;
@@ -1191,8 +1247,23 @@ Examples
 	/*
 	Style Examples
 	*/
-	.color-swatch {
-		max-width: 30%;
-	}
-
-
+		.color-swatch {
+			max-width: 30%;
+		}
+	/*
+	Layout Page Examples
+	*/
+		.layout-example-content {
+			background-color: white;
+			margin: auto;
+			padding: 2rem;
+		}
+		.layout-example-content h1, h2, h3 {
+			max-width: 60rem;
+			margin: auto;
+		}
+		figure {
+			border-top: solid var(--color-primary-2) 3px;
+			padding: 3rem;
+			margin: auto;
+		}
